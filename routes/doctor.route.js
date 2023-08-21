@@ -28,7 +28,7 @@ docterRoute.get("/", async (req, res) => {
       query = query.sort(sortfield);
     }
     if (search) {
-      query = query.where({ name: { $regex: search, $options: i } });
+      query = query.where({ name: { $regex: search, $options: "i" } });
     }
 
     const data = await query;
